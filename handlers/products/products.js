@@ -10,6 +10,7 @@ module.exports = (app) => {
   app.get("/products/:id", guard, async (req, res) => {
     const product = await Product.findOne({ _id: req.params.id });
 
+    console.log("elia");
     if (!product) {
       return res.status(403).send("Product not found");
     }
